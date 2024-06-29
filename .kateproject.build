@@ -1,0 +1,16 @@
+{
+    "Auto_generated": "This file is auto-generated. Any extra tags or formatting will be lost",
+    "target_sets": [
+        {
+            "directory": "/home/bryn/Projects/Development/Scala/scorble",
+            "name": "Target Set",
+            "targets": [
+                {
+                    "build_cmd": "sbt run",
+                    "name": "build",
+                    "run_cmd": "scala target/scala-3.4.2/scorble_3-0.1.0-SNAPSHOT.jar"
+                }
+            ]
+        }
+    ]
+}
