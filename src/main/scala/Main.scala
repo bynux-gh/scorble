@@ -81,7 +81,7 @@ def usage = """usage: java -jar scorble `word`
               |  - Ex: "scorble driv3ers" if 'v' is on triple letter
               |- Use them at the beginning of a word to signify a triple word score.
               |  - Ex: "scorble 3fork2s" if triple word with 'k' on double letter.
-            """.stripMargin()
+            """.stripMargin;
 
 val letterValues: Map[Char, Int] = Map(
   'a' -> 1,

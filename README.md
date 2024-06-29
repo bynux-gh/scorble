@@ -1,13 +1,43 @@
-<<<<<<< HEAD
 # scorble
-A score calculator for Scrabble
-=======
-## sbt project compiled with Scala 3
+## A score calculator for Scrabble
+
+Scorble is a simple command line calculator for quickly counting up points on a
+word in Scrabble. It supports double and triple letter and word scores and blank
+tiles, and can even calculate properly if two word score tiles are covered!
+
+### Installation
+
+#### From Releases
+
+The compiled `.jar` can be found in Releases. Download, place where you want it,
+and run it with `java -jar $PATH_TO_JAR [word]`
+
+#### From Source
+
+Building this requires [sbt](https://www.scala-sbt.org/), Scala's de-facto build
+tool. After installing sbt on your computer:
+
+- Clone the repository to your computer
+```sh
+git clone https://github.com/digital-diplomat/scorble.git
+```
+- Navigate into the directory
+```sh
+cd scorble
+```
+- Compile the program, then create a Java-compatible jar.
+```sh
+sbt compile && sbt assembly
+```
+
+The compiled binary can be found in `$PROJECT_ROOT/target/scala-$VERSION/`
 
 ### Usage
 
-This is a normal sbt project. You can compile code with `sbt compile`, run it with `sbt run`, and `sbt console` will start a Scala 3 REPL.
+Run the program with `java -jar $PATH_TO_JAR word`
 
-For more information on the sbt-dotty plugin, see the
-[scala3-example-project](https://github.com/scala/scala3-example-project/blob/main/README.md).
->>>>>>> 348e5fc (Initial commit)
+- Use `_` for a blank tile. This will automatically be calculated as 0.
+- Use `2` or `3` after a letter for double and triple letter scores respectively.
+  - (Ex: `scorble driv3ers` means the 'v' tile is on a triple letter square)
+- Use them at the beginning of a word to signify a triple word score.
+  - Ex: `scorble 3fork2s` if _any_ letter is on the triple word square.
