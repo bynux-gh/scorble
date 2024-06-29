@@ -10,6 +10,9 @@ hs_err_pid*
 # macOS
 .DS_Store
 
+# Kate
+.kateproject.build
+
 # sbt specific
 dist/*
 target/
