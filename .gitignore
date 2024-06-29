@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 *.class
 *.log
 .metals/
@@ -42,4 +41,3 @@ metals.sbt
 .idea
 .idea_modules
 /.worksheet/
->>>>>>> 348e5fc (Initial commit)
