@@ -1,14 +1,5 @@
 /** Scorble - a simple Scrabble word score calculator.
  *
- *  This godforsaken thing works in the following way:
- *  - Make sure word was given, show usage if not
- *  - Translates each letter to their scores, places into array.
- *    - Letters are their standard values.
- *    - Blanks are 0 and numbers
- *    - Numbers represent multipliers, and are saved as negatives for future
- *      checking and calculation.
- *  - While the first value of the array is negative, negate it (positive again)
- *    and factor it into the wordMultiplier,
  */
 
 import scala.io.StdIn.readLine;
@@ -22,9 +13,16 @@ object Main {
     try {
       word = args(0).toLowerCase();
     } catch {
-      // If no argument has been passed, show usage.
+      // If no argument has been passed, start interactive loop.
       case e: IndexOutOfBoundsException => {
-        println(usage);
+        print(usage);
+        word = readLine();
+        while (word != "") {
+          word = word.toLowerCase();
+          main(Array(word));
+          print("> ");
+          word = readLine();
+        }
         System.exit(0);
       }
     }
@@ -74,14 +72,16 @@ object Main {
   }
 }
 
-def usage = """usage: java -jar scorble `word`
+def usage = """SCORBLE - Scrabble word score calculator
               |
               |- Use '_' for blank tile.
               |- Use '2' or '3' after a letter for double and triple letter scores respectively.
               |  - Ex: "scorble driv3ers" if 'v' is on triple letter
               |- Use them at the beginning of a word to signify a triple word score.
               |  - Ex: "scorble 3fork2s" if triple word with 'k' on double letter.
-            """.stripMargin;
+              |
+              |Press Enter without input to quit.
+              |> """.stripMargin;
 
 val letterValues: Map[Char, Int] = Map(
   'a' -> 1,
