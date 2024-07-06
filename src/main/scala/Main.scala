@@ -17,10 +17,10 @@ object Main {
       case e: IndexOutOfBoundsException => {
         print(usage);
         word = readLine();
-        while (word != "") {
+        while (word != null && word != "") {
           word = word.toLowerCase();
           main(Array(word));
-          print("> ");
+          print("\n> ");
           word = readLine();
         }
         System.exit(0);
@@ -80,7 +80,7 @@ def usage = """SCORBLE - Scrabble word score calculator
               |- Use them at the beginning of a word to signify a triple word score.
               |  - Ex: "scorble 3fork2s" if triple word with 'k' on double letter.
               |
-              |Press Enter without input to quit.
+              |Use Ctrl-D or press Enter without input to quit.
               |> """.stripMargin;
 
 val letterValues: Map[Char, Int] = Map(

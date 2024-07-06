@@ -34,10 +34,13 @@ The compiled binary can be found in `$PROJECT_ROOT/target/scala-$VERSION/`
 
 ### Usage
 
-Run the program with `java -jar $PATH_TO_JAR word`
+Run the program with `java -jar $PATH_TO_JAR [word]`. Running Scorble without a
+word will start an interactive loop, e.g. for an ongoing game.
 
 - Use `_` for a blank tile. This will automatically be calculated as 0.
 - Use `2` or `3` after a letter for double and triple letter scores respectively.
   - (Ex: `scorble driv3ers` means the 'v' tile is on a triple letter square)
 - Use them at the beginning of a word to signify a triple word score.
   - Ex: `scorble 3fork2s` if _any_ letter is on the triple word square.
+
+You can then exit the program with Ctrl-D or by pressing Enter with no input.
