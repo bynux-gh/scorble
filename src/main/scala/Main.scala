@@ -76,9 +76,9 @@ def usage = """SCORBLE - Scrabble word score calculator
               |
               |- Use '_' for blank tile.
               |- Use '2' or '3' after a letter for double/triple letter scores respectively.
-              |  - Ex: "scorble driv3ers" if 'v' is on triple letter
+              |  - Ex: "driv3ers" if 'v' is on triple letter
               |- Use them at the beginning of a word to signify a double/triple word score.
-              |  - Ex: "scorble 3fork2s" if triple word with 'k' on double letter.
+              |  - Ex: "3fork2s" if triple word with 'k' on double letter.
               |
               |Use Ctrl-D or press Enter without input to quit.
               |> """.stripMargin;
