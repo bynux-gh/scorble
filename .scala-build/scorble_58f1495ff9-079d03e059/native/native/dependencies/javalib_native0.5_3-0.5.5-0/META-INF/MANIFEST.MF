@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: javalib
+Implementation-Version: 0.5.5
+Specification-Vendor: org.scala-native
+Specification-Title: javalib
+Implementation-Vendor-Id: org.scala-native
+Specification-Version: 0.5.5
+Implementation-URL: http://www.scala-native.org
+Implementation-Vendor: org.scala-native
+

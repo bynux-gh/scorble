@@ -1,1 +1,0 @@
-java -jar scorble.jar

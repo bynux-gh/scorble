@@ -1,3 +1,0 @@
-#!/bin/env java
-
-java -jar scorble.jar

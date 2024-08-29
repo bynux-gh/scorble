@@ -9,33 +9,41 @@ tiles, and can even calculate properly if two word score tiles are covered!
 
 #### From Releases
 
-The compiled `.jar` can be found in Releases. Download, place where you want it,
-and run it with `java -jar $PATH_TO_JAR [word]`
+Scorble is available both as a Java-compatible executable (all platforms) or as
+a Linux native executable via Scala Native (Linux x86_64 only). Either version can be
+downloaded from Releases. I will also be making it available on the AUR in the
+near future for Arch/EndeavourOS/Manjaro users.
 
 #### From Source
 
-Building this requires [sbt](https://www.scala-sbt.org/), Scala's de-facto build
-tool. After installing sbt on your computer:
+Building this requires [Scala CLI](https://scala-cli.virtuslab.org/), Scala's default command
+line tool. Install it from the link above.
 
 - Clone the repository to your computer
 ```sh
 git clone https://github.com/digital-diplomat/scorble.git
 ```
+
 - Navigate into the directory
 ```sh
 cd scorble
 ```
-- Compile the program, then create a Java-compatible jar.
+
+- Compile the program using either Scala Native…
 ```sh
-sbt compile && sbt assembly
+scala-cli --power package --native -o scorble --native-mode release-fast scorble.scala
 ```
 
-The compiled binary can be found in `$PROJECT_ROOT/target/scala-$VERSION/`
+- …or to an executable Java package (requires a modern JRE install)
+```sh
+scala-cli --power package -o scorble --assembly
+```
+
+Either option will create an executable that can be run in the terminal with `./scorble`.
 
 ### Usage
 
-Run the program with `java -jar $PATH_TO_JAR [word]`. Running Scorble without a
-word will start an interactive loop, e.g. for an ongoing game.
+Running Scorble without a word will start an interactive loop, e.g. for an ongoing game.
 
 - Use `_` for a blank tile. This will automatically be calculated as 0.
 - Use `2` or `3` after a letter for double/triple letter scores respectively.
