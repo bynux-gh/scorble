@@ -4,19 +4,8 @@
 # Kate
 .kateproject.build
 
-# sbt specific
-dist/*
-target/
-lib_managed/
-src_managed/
-project/boot/
-project/plugins/project/
-project/local-plugins.sbt
-.history
-.ensime
-.ensime_cache/
-.sbt-scripted/
-local.sbt
+# scala-cli specific
+.scala-build/
 
 # Bloop
 .bsp
